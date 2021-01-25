@@ -329,7 +329,7 @@ describe("addsJamaica", () => {
   });
 });
 
-describe.only("addsCountry", () => {
+describe("addsCountry", () => {
   test("adds Jamaica to given object", () => {
     const citiesObj = {
       Afghanistan: "Kabul",
@@ -481,7 +481,7 @@ describe("countOccuranceNoSpaces", () => {
   });
 });
 
-describe("mostCommonElement", () => {
+describe.only("mostCommonElement", () => {
   test("returns the most common element", () => {
     expect(mostCommonElement(["cat", "bird", "cat"])).toBe("cat");
     expect(mostCommonElement([2, 1, 1, 1, 3, 2])).toBe(1);
