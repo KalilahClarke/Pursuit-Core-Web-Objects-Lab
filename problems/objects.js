@@ -229,7 +229,17 @@ const cubeObj = (obj) => {
  */
 
 const countAandE = (str) => {
-
+let obj={}
+obj.a = 0
+obj.e = 0
+for (let i=0; i < str.length; i++){
+  if (str[i].toLowerCase()==="e"){
+    obj.e ++ 
+  }else if (str[i].toLowerCase()==="a"){
+    obj.a ++ 
+  }
+}
+  return obj
 };
 
 /**
@@ -240,6 +250,23 @@ const countAandE = (str) => {
  */
 
 const countOccurance = (str) => {
+  let obj = {}
+  str = str.toLowerCase()
+  for (let i=0; i < str.length; i++){
+    if(obj[str[i]]===undefined){
+      obj[str[i]]=1
+      
+    }else{
+      obj[str[i]]++
+    }
+  }
+  return obj
+ 
+  //if str[i] is not in the object add the pair
+  //else add 1
+  //(how do you key into an object "value"  str.key or str["key"])
+  //(how would you change the value str.key = apple reassigning and changing the value )
+  //ex str.a = 3
 
 };
 
@@ -276,27 +303,30 @@ return counts
  */
 
 const mostCommonElement = (array) => {
-// let count={}
-// arr.forEach((elem) => {
-//   if (count[elem]){
-//     count[elem]++
-//   }else{
-//     count[elem]= 1
+let count={}
+array.forEach((elem) => {
+  if (count[elem]!==undefined){
+    count[elem]++
+  }else{
+    count[elem]= 1
 
-//   }
-// })
-// let max=0
-// let element= null
+  }
+})
+console.log(count)
+let max=0
+let element= null
 
-// for (let key in count){
-//   if (count[key] > max){
-//     max = count[key]
-//     element = key
-//   }
-// }
-// return element
-// }
-
+for (let key in count){
+  if (count[key] > max){
+    max = count[key]
+    element = key
+  }
+  
+}
+console.log(element)
+return element
+}
+console.log(mostCommonElement([2, 1, 1, 1, 3, 2]))
 /**
  * Takes in an object and an array.
  * Returns a new array.
