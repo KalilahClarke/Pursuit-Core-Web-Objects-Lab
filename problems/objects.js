@@ -316,7 +316,11 @@ console.log(count)
 let max=0
 let element= null
 
-for (let key in count){
+for (let key of array){
+
+  //key into an array is of  // and keying into an object is in 
+  // when keying into an array we are looking through the index and are able to recieve a number
+  // but with objects we can only key into a string.
   if (count[key] > max){
     max = count[key]
     element = key
